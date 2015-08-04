@@ -1,16 +1,22 @@
 class String
   define_method(:scrabble_score) do
-  point1 = ['a','e','i','o','u','l','n','r','s','t']
-  point2 = ['d','g']
+  letters = [['a','e','i','o','u','l','n','r','s','t'],
+            ['d','g'],
+            ['b','c','m','p'],
+            ['f','h','v','w','y'],
+            ['k'],
+            ['j','x'],
+            ['q','z']]
+
+  points = [1,2,3,4,5,8,10]
 
   point = 0
 
   self.each_char do |char|
-    if point1.include?(char)
-      point = point.to_i + 1
-    end
-    if point2.include?(self)
-      point = point.to_i + 2
+    7.times() do |n|
+      if letters[n].include?(char)
+        point = point.to_i + points[n]
+      end
     end
   end
   point
