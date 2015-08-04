@@ -30,4 +30,7 @@ describe('String#scrabble_score') do
   it('returns a scrabble score for a letter') do
     expect('q'.scrabble_score()).to(eq(10))
   end
+  it('recieves a word and calculates the points') do
+    expect('chat'.scrabble_score()).to(eq(9))
+  end
 end
